@@ -1,18 +1,12 @@
-My assignment questions, or other things related to assignment:  
-
- - Fama- French Factors - daily variances in csv 
- - Need to get log returns from prices and express in daily  percentage returns 
- - For fixed entity effects and fixed time effects, the mean of the errors don't need to be substracted  before performing demeaned regression 
- - After performing demeaned regression, the OLS package reports wrong standard errors , number of degrees of freedom must include also the removed number of dummies : N - k - D , N total number of observations , k number of regressors 
-D number of dummies . Need to correct that to interpret the results ? 
-
-           
-         From Charlie implementation of the homework: 
-         We should get something similar if correct: 
-                                                         t statistic 
-         MKTRF : 0.9843 ( market - risk free rate )      53
-         SMB   : 0.11                                    53   
-         HML:    0.21                                    139  
-
- 
   
+
+ 0- Get the log return of prices 
+ 1- Merge the csv-s into a dataframe using time as id  
+ 2- Expand dataframe to get dummies for categorical variables  
+ 3- Remove one dummy per category 
+ 4- remove first company from each sector    
+ 5- merge dummy for sector & industry, if the number of companies < number of industries for that sector ?? 
+ 6- run pooled regression calculate R2 adjusted
+ 7- run  implement with entity   fixed effects and time fixed effects compare R2 adjusted to pooled regression. Infer that both are better ? 
+ 8. Compare entity effects to time fixed effects using F statistic  Chose one with the highest. Compare each one to unrestricted  model ? 
+ 9 . Interpret summary results for best model 
