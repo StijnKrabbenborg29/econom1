@@ -1,12 +1,30 @@
-  
+Make a scatter with regular return (dependent variable) and indepdent variables. (You will see a non-linear trend)
+proof why we use log return instead of regular return.
 
  0- Get the log return of prices 
  1- Merge the csv-s into a dataframe using time as id  
  2- Expand dataframe to get dummies for categorical variables  
+
+Some theory dummy variables, and dummy variable trap
  3- Remove one dummy per category 
  4- remove first company from each sector    
- 5- merge dummy for sector & industry, if the number of companies < number of industries for that sector ?? 
- 6- run pooled regression calculate R2 adjusted
+ 5- merge dummy for sector & industry, if the number of companies < number of industries for that sector ?? (not required)
+
+ 6- run pooled regression calculate R2 adjusted 
  7- run  implement with entity   fixed effects and time fixed effects compare R2 adjusted to pooled regression. Infer that both are better ? 
+
+Models: 
+1. Model with only Beta (restricted model 1)
+2. Model with Beta + time effect (restricted model 2)
+3. Model with Beta + sector effect (restricted model 3)
+4. Model with Beta + time effect + sector effect (unrestricted model)
+
  8. Compare entity effects to time fixed effects using F statistic  Chose one with the highest. Compare each one to unrestricted  model ? 
  9 . Interpret summary results for best model 
+
+Specific dummy variable per group in assignment:
+Your choice is not free: If you are in group "A1 n", (where n is the number of *your* group), calculate d= n mod 3 + 1 and take dummy set d from the list above. Example: Group "A1 10" has n= 10, so d= n mod 3 + 1= 10 mod 3 + 1= 1 + 1= 2, hence group A1 10 will study the sector dummies as this is the second entry in the list above.
+
+1. industry dummies (not included)
+2. sector dummies
+3. employee size dummies (not included)
